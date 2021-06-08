@@ -147,9 +147,9 @@ def main():
     sparse_person_content = sparse.csr_matrix((grouped_df['eventStrength'].astype(float), (grouped_df['person_id'], grouped_df['content_id'])))
     
     scores = []
-    # scores.append(bpr(sparse_content_person,sparse_person_content))
+    scores.append(bpr(sparse_content_person,sparse_person_content))
     scores.append(als(sparse_content_person, sparse_person_content))
-    # scores.append(lmf(sparse_content_person,sparse_person_content))
+    scores.append(lmf(sparse_content_person,sparse_person_content))
      
     print(scores)
     
